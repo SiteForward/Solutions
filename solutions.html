@@ -1,0 +1,61 @@
+<html>
+
+  <head>
+    <style>
+      a {
+        display: inline-block;
+        position: relative;
+      }
+
+      p {
+        color: rgba(20, 20, 20, 0.6);
+        font-size: .95em;
+        line-height: 1.5;
+        font-family: "Muli", Helvetica, sans-serif;
+        font-weight: normal;
+        margin: 0 0 1.5rem 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <p style="text-align: center;">
+      <a href="https://mysolutionsonline.ca/current-issue" rel="noopener noreferrer" target="_blank">
+        <img src="https://static.twentyoverten.com/5bf848fe4f558976a90e50e2/EbqJn14TsGD/1098170_Solutions-Winter-2019-Magazine_MK2870_E_0919_1000X1000.jpg" style="box-shadow: 1px 3px 10px 0px #8b8b8b;width: 200px;"></a>
+    </p>
+    <p class="" style="text-align: center;"><strong><span id="solutions-season">Winter</span> <span id="solutions-year">2019/2020</span></strong>&nbsp;
+      <br>Bull's Eye!
+    </p>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+
+          var color = null;
+          try {
+            var urlParams = new URLSearchParams(window.location.search);
+            color = urlParams.get('color');
+          } catch (e) {
+
+            color = getURLParam('color');
+
+            function getURLParam(name) {
+              var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+              if (results == null) {
+                return null;
+              } else {
+                return decodeURI(results[1]) || 0;
+              }
+            }
+          }
+
+          if (color) {
+            $("p").css("color", color);
+          }
+        });
+
+  </script>
+
+</html>
